@@ -21,7 +21,7 @@ const MONGO_URI = 'mongodb+srv://LL3:12345@cluster0.e4yy139.mongodb.net/details?
 // Connect to MongoDB
 mongoose.connect(MONGO_URI, {
   useNewUrlParser: true,
-  useUnifiedTopology: true,
+  useUnifiedTopology: true, // Remove this option (deprecated)
 });
 
 // Define User schema and model
@@ -32,7 +32,6 @@ const UserSchema = new mongoose.Schema({
 });
 
 const User = mongoose.model('User', UserSchema);
-
 // Routes
 // Register a new user
 app.post(
